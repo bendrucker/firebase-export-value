@@ -4,7 +4,8 @@
   "description": "Create Firebase export objects like snapshot.exportVal",
   "main": "./src",
   "scripts": {
-    "test": "babel-tape-runner test/*.js"
+    "test": "babel-tape-runner test/*.js",
+    "build": "babel ./src -d ./lib --optional runtime"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "babel-tape-runner": "~1.1.0",
     "sinon": "~1.14.1",
     "tape": "~4.0.0"
+  },
+  "dependencies": {
+    "babel-runtime": "~5.1.13"
   }
 }
