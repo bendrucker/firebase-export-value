@@ -1,0 +1,31 @@
+{
+  "name": "firebase-export-value",
+  "version": "1.0.0",
+  "description": "Create Firebase export objects like snapshot.exportVal",
+  "main": "./src",
+  "scripts": {
+    "test": "babel-tape-runner test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendrucker/firebase-export-value.git"
+  },
+  "keywords": [
+    "firebase",
+    "data",
+    "priority",
+    "export",
+    "mockfirebase"
+  ],
+  "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bendrucker/firebase-export-value/issues"
+  },
+  "homepage": "https://github.com/bendrucker/firebase-export-value#readme",
+  "devDependencies": {
+    "babel": "~5.1.13",
+    "babel-tape-runner": "~1.1.0",
+    "tape": "~4.0.0"
+  }
+}
