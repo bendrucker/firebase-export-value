@@ -1,6 +1,6 @@
 {
   "name": "firebase-export-value",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create Firebase export objects like snapshot.exportVal",
   "main": "./src",
   "scripts": {
