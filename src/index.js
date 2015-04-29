@@ -15,7 +15,7 @@ export default function exportVal (data, priority, child) {
   }
   return Object.keys(data)
     .map((key) => {
-      return [key, exportVal(...child(key))]
+      return [key, exportVal(...child(key, data[key], data))]
     })
     .reduce(set, output)
 }

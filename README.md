@@ -15,7 +15,7 @@ npm install firebase-export-value
 
 * `data`: any valid Firebase data value (an object with 1 or more keys, `null`, a `String`, or a `Number`)
 * `priority`: the data priority
-* `child`: a `Function` that accepts a `key` and returns an array containing the same arguments passed to `exportValue` but for the given `key` in `data`
+* `child`: a `Function` that accepts a `key`, `value`, and `object` and returns an array containing the same arguments passed to `exportValue` but for the given `key` in `data`
 
 `child` is required if `data` is an object. `child` is used to traverse the object, generating `data`, `priority`, and `child` at each object Node and passing it to `exportVal` until all nodes are primitive values.
 
@@ -50,3 +50,10 @@ The result looks like this:
   }
 }
 ```
+
+To handle deep objects, `child` becomes the following:
+
+```js
+function child (key, value) {
+  return [value, ++priority]
+}
