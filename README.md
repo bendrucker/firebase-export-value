@@ -1,5 +1,6 @@
 # firebase-export-value [![Build Status](https://travis-ci.org/bendrucker/firebase-export-value.svg?branch=master)](https://travis-ci.org/bendrucker/firebase-export-value)
-Create Firebase export objects like Firebase's [`snapshot.exportVal`](https://www.firebase.com/docs/web/api/datasnapshot/exportval.html)
+
+> Create Firebase export objects like Firebase's [`snapshot.exportVal`](https://www.firebase.com/docs/web/api/datasnapshot/exportval.html)
 
 ## Installing
 
@@ -7,23 +8,10 @@ Create Firebase export objects like Firebase's [`snapshot.exportVal`](https://ww
 npm install firebase-export-value
 ```
 
-## API
-
-##### `exportValue(data, priority [, Function child])` -> `Any`
-
-`exportValue` takes three arguments:
-
-* `data`: any valid Firebase data value (an object with 1 or more keys, `null`, a `String`, or a `Number`)
-* `priority`: the data priority
-* `child`: a `Function` that accepts a `key`, `value`, and `object` and returns an array containing the same arguments passed to `exportValue` but for the given `key` in `data`
-
-`child` is required if `data` is an object. `child` is used to traverse the object, generating `data`, `priority`, and `child` at each object Node and passing it to `exportVal` until all nodes are primitive values.
-
-## Example
-
-In this example, we'll increment the priority at every key for a shallow object. 
+## Usage
 
 ```js
+var exportValue = require('firebase-export-value')
 var priority = 0
 var data = {
   foo: 'bar',
@@ -35,7 +23,7 @@ function child (key) {
 exportValue(data, priority, child)
 ```
 
-The result looks like this:
+Result:
 
 ```js
 {
@@ -51,9 +39,26 @@ The result looks like this:
 }
 ```
 
-To handle deep objects, `child` becomes the following:
+## API
 
-```js
-function child (key, value) {
-  return [value, ++priority]
-}
+#### `exportValue(data, priority, child)` -> `any`
+
+##### data
+
+*Required*  
+Type: `any`
+
+The data to transform. Can be a value or an object.
+
+##### priority
+
+Type: `any`  
+Default: `null`
+
+##### child
+
+Type: `function`  
+
+Required for data objects. Called with `key`, `value`, and `object` for each key/value pair in the data object and should return an array containing the same arguments passed to `exportValue` but for the given `key` in `data`.
+
+`child` is used to traverse the object, generating `data`, `priority`, and `child` at each object Node and passing it to `exportVal` until all nodes are primitive values.
