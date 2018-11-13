@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/bendrucker/firebase-export-value#readme",
   "devDependencies": {
-    "sinon": "~1.14.1",
-    "standard": "~4.3.1",
-    "tape": "~4.0.0"
+    "sinon": "~7.1.1",
+    "standard": "~12.0.1",
+    "tape": "~4.9.1"
   },
   "files": [
     "index.js",
