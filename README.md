@@ -1,4 +1,4 @@
-# firebase-export-value [![Build Status](https://travis-ci.org/bendrucker/firebase-export-value.svg?branch=master)](https://travis-ci.org/bendrucker/firebase-export-value)
+# firebase-export-value [![Build Status](https://travis-ci.org/bendrucker/firebase-export-value.svg?branch=master)](https://travis-ci.org/bendrucker/firebase-export-value) [![Greenkeeper badge](https://badges.greenkeeper.io/bendrucker/firebase-export-value.svg)](https://greenkeeper.io/)
 
 > Create Firebase export objects like Firebase's [`snapshot.exportVal`](https://www.firebase.com/docs/web/api/datasnapshot/exportval.html)
 
